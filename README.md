@@ -5,7 +5,7 @@ A nested drag and drop config tool based on [atlaskit/tree](https://atlaskit.atl
 ## Demo
 
 You can check the live demo here:
-[Codesandbox Demo](https://codesandbox.io/p/github/heyoboo/AtlaskitTree-CRUD)
+[Codesandbox Demo](https://codesandbox.io/p/devbox/ntw26c)
 
 ## To run the app
 
