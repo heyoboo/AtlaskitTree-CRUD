@@ -5,7 +5,7 @@ A nested drag and drop config tool based on [atlaskit/tree](https://atlaskit.atl
 You can check the live demo here:
 [Codesandbox Demo](https://codesandbox.io/p/devbox/ntw26c)
 
-## The challenge
+## The Challenge
 I found that to create or delete an item from the tree by directly using mutateTree can cause error, so I wrote the custom functions for it :)
 
 ## The Goal
