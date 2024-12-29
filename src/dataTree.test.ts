@@ -1,21 +1,18 @@
-import { toTree } from 'src/dataTree'
+import { toTree } from "./dataTree";
 
-test('parse data structure', () => {
+test("parse data structure", () => {
   const res = toTree([
-      {
-        id: 1,
-        title: 'n1',
-        type: 'section',
-        parent: null,
-      },
-      {
-        id: 2,
-        title: 'n2',
-        type: 'doc',
-        parent: 1,
-      }
-    ]
-  )
+    {
+      id: 1,
+      name: "n1",
+      sourceId: null,
+    },
+    {
+      id: 2,
+      name: "n2",
+      sourceId: 1,
+    },
+  ]);
 
   const expected = {
     rootId: 0,
@@ -25,7 +22,7 @@ test('parse data structure', () => {
         children: [1],
         hasChildren: true,
         isExpanded: true,
-        data: {}
+        data: {},
       },
       1: {
         id: 1,
@@ -34,10 +31,10 @@ test('parse data structure', () => {
         isExpanded: true,
         data: {
           id: 1,
-          title: 'n1',
-          type: 'section',
-          parent: null,
-        }
+          name: "n1",
+          parent: 0,
+          sourceId: null,
+        },
       },
       2: {
         id: 2,
@@ -46,13 +43,13 @@ test('parse data structure', () => {
         isExpanded: true,
         data: {
           id: 2,
-          title: 'n2',
-          type: 'doc',
+          name: "n2",
           parent: 1,
-        }
-      }
-    }
-  }
+          sourceId: 1,
+        },
+      },
+    },
+  };
 
-  expect(res).toStrictEqual(expected)
-})
+  expect(res).toStrictEqual(expected);
+});

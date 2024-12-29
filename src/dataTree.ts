@@ -1,5 +1,12 @@
 import { TreeData, TreeItem } from "@atlaskit/tree";
 
+interface FlatItem {
+  id: number;
+  name: string;
+  sourceId: number | null;
+  displaySequence?: number;
+}
+
 const testData = [
   {
     id: 7,
@@ -33,24 +40,16 @@ const testData = [
   },
 ];
 
-export function toTree(): TreeData {
+export function toTree(data: FlatItem[]): TreeData {
   const rootId = 0;
-  // test map for testData
+  // test map for data
   const testMap = new Map<number, number[]>();
-  testData.forEach((node) => {
+  data.forEach((node) => {
     const parent = node.sourceId || rootId;
     const children = testMap.get(parent) || [];
     testMap.set(parent, children.concat([node.id]));
   });
-  const buildTestItem = (
-    node: {
-      id: number;
-      name: string;
-      displaySequence: number;
-      sourceId: number | null;
-    },
-    children: number[]
-  ): TreeItem => ({
+  const buildTestItem = (node: FlatItem, children: number[]): TreeItem => ({
     id: node.id,
     children: testMap.get(node.id) || [],
     hasChildren: children.length > 0,
@@ -69,7 +68,7 @@ export function toTree(): TreeData {
   };
   const items = {
     [rootItem.id]: rootItem,
-    ...testData.reduce(
+    ...data.reduce(
       (acc, node) =>
         Object.assign(acc, {
           [node.id]: buildTestItem(node, testMap.get(node.id) || []),
@@ -83,4 +82,4 @@ export function toTree(): TreeData {
   };
 }
 
-export const dataTree = toTree();
+export const dataTree = toTree(testData);
