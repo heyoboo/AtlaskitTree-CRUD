@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, } from "react";
 import Tree, {
   mutateTree,
   moveItemOnTree,
@@ -10,7 +10,6 @@ import Tree, {
   TreeData,
 } from "@atlaskit/tree";
 import { dataTree } from "./dataTree";
-import { render } from "react-dom";
 import findLargestValue from "./findLargestValue";
 import "./showWarning.css";
 
@@ -29,15 +28,7 @@ const TestItem = ({
   const { item, depth, onExpand, onCollapse, provided, snapshot } =
     renderItemParams;
   const { tree, setTree, removeTargetById, setIsNestingEnabled } = customParams;
-  const {
-    isDragging,
-    isDropAnimating,
-    dropAnimation,
-    mode,
-    draggingOver,
-    combineWith,
-    combineTargetFor,
-  } = snapshot;
+  const { combineTargetFor, } = snapshot;
   const [isShowWarning, setIsShowWarning] = useState(false);
 
   useEffect(() => {
