@@ -23,4 +23,6 @@ So I hope you enjoy it and I may update it in the future for more featured compo
 ## To run the app
 In the project directory:
 
-### `npm install && npm run dev`
+```bash
+npm install && npm run dev
+```
