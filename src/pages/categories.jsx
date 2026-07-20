@@ -171,7 +171,7 @@ export default function Categories() {
           <section className="bg-mist-950 border border-gray-700 rounded p-3 mb-4">
             <h5 className="font-semibold mb-1">Categories</h5>
             <pre
-              className="border border-gray-700 rounded p-2 mb-0 min-h-80 max-h-max resize-y overflow-auto"
+              className="border border-gray-700 rounded p-2 mb-0 min-h-80 max-h-max h-96 resize-y overflow-auto"
             >
               {JSON.stringify(categories, null, 2)}
             </pre>
