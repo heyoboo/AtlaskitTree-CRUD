@@ -1,0 +1,8 @@
+@use "tailwindcss";
+
+$themes: (
+	"indigo": var(--color-indigo-600),
+	"third": #1f8a60,
+	"fourth": #007fc5,
+	"fifth": #1470ad,
+);

@@ -1,0 +1,1 @@
+export { CategoryConfiguration } from "./categoryConfiguration"
